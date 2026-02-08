@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Payment Awareness</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f4f6f9; color:#333; }
+    header { background:#2a9d8f; color:white; padding:20px; text-align:center; }
+    nav { background:#264653; display:flex; justify-content:center; }
+    nav a { color:white; padding:15px; text-decoration:none; }
+    nav a:hover { background:#1d3557; }
+    section { padding:40px; max-width:900px; margin:auto; }
+    h2 { color:#264653; }
+    .card { background:white; padding:20px; margin:20px 0; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+    .methods button { margin:10px; padding:10px 20px; background:#264653; color:white; border:none; border-radius:5px; cursor:pointer; }
+    .methods button:hover { background:#1d3557; }
+    form input { display:block; width:100%; margin:10px 0; padding:8px; border:1px solid #ccc; border-radius:5px; }
+    form button { background:#e76f51; color:white; padding:10px; border:none; border-radius:5px; cursor:pointer; }
+    form button:hover { background:#d62828; }
+    #confirmation { margin-top:20px; font-weight:bold; color:green; }
+    footer { background:#2a9d8f; color:white; text-align:center; padding:15px; margin-top:30px; }
+    .faq { cursor:pointer; margin:10px 0; padding:10px; background:#e9ecef; border-radius:5px; }
+    .faq:hover { background:#dee2e6; }
+    .answer { display:none; margin-top:5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Digital Payment Awareness in Rural Areas</h1>
+    <p>Empowering communities with safe and easy online transactions</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#demo">Payment Demo</a>
+    <a href="#faq">FAQs</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Digital Payments</h2>
+    <div class="card">
+      <p>Digital payments allow people to transfer money electronically using UPI, debit cards, net banking, and mobile wallets. 
+      They reduce the need for cash, improve safety, and connect rural communities to the digital economy.</p>
+    </div>
+  </section>
+
+  <section id="demo">
+    <h2>Try a Payment Demo</h2>
+    <div class="card">
+      <p>Select a payment method to see how it works:</p>
+      <div class="methods">
+        <button onclick="selectMethod('UPI')">UPI</button>
+        <button onclick="selectMethod('Debit Card')">Debit Card</button>
+        <button onclick="selectMethod('Net Banking')">Net Banking</button>
+        <button onclick="selectMethod('Mobile Wallet')">Mobile Wallet</button>
+      </div>
+      <div id="form-container"></div>
+      <div id="confirmation"></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="card">
+      <div class="faq" onclick="toggleFAQ(this)">💡 What is UPI?<div class="answer">UPI (Unified Payments Interface) allows instant money transfers using a mobile app.</div></div>
+      <div class="faq" onclick="toggleFAQ(this)">💡 Is digital payment safe?<div class="answer">Yes, if you use trusted apps and never share your PIN or OTP.</div></div>
+      <div class="faq" onclick="toggleFAQ(this)">💡 Can rural areas access it?<div class="answer">Yes, with smartphones and internet, rural communities can easily use digital payments.</div></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="card">
+      <form onsubmit="submitContact(event)">
+        <label>Name:</label>
+        <input type="text" required>
+        <label>Email:</label>
+        <input type="email" required>
+        <label>Message:</label>
+        <input type="text" required>
+        <button type="submit">Send</button>
+      </form>
+      <div id="contact-confirm"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Digital Literacy Project | Demo Website</p>
+  </footer>
+
+  <script>
+    function selectMethod(method) {
+      let formHTML = "";
+      if (method === "UPI") {
+        formHTML = `<form onsubmit="processPayment(event, '${method}')">
+          <label>Enter UPI ID:</label>
+          <input type="text" required placeholder="example@upi">
+          <button type="submit">Pay Now</button>
+        </form>`;
+      } else if (method === "Debit Card") {
+        formHTML = `<form onsubmit="processPayment(event, '${method}')">
+          <label>Card Number:</label>
+          <input type="text" required placeholder="1234 5678 9012 3456">
+          <label>Expiry Date:</label>
+          <input type="text" required placeholder="MM/YY">
+          <label>CVV:</label>
+          <input type="password" required placeholder="***">
+          <button type="submit">Pay Now</button>
+        </form>`;
+      } else if (method === "Net Banking") {
+        formHTML = `<form onsubmit="processPayment(event, '${method}')">
+          <label>Select Bank:</label>
+          <input type="text" required placeholder="Bank Name">
+          <label>User ID:</label>
+          <input type="text" required>
+          <label>Password:</label>
+          <input type="password" required>
+          <button type="submit">Pay Now</button>
+        </form>`;
+      } else if (method === "Mobile Wallet") {
+        formHTML = `<form onsubmit="processPayment(event, '${method}')">
+          <label>Mobile Number:</label>
+          <input type="text" required placeholder="9876543210">
+          <label>OTP:</label>
+          <input type="text" required placeholder="Enter OTP">
+          <button type="submit">Pay Now</button>
+        </form>`;
+      }
+      document.getElementById("form-container").innerHTML = formHTML;
+      document.getElementById("confirmation").innerHTML = "";
+    }
+
+    function processPayment(event, method) {
+      event.preventDefault();
+      document.getElementById("confirmation").innerHTML = `✅ Payment successful using ${method}!`;
+    }
+
+    function toggleFAQ(element) {
+      const answer = element.querySelector(".answer");
+      answer.style.display = answer.style.display === "block" ? "none" : "block";
+    }
+
+    function submitContact(event) {
+      event.preventDefault();
+      document.getElementById("contact-confirm").innerHTML = "✅ Thank you! Your message has been sent.";
+    }
+  </script>
+</body>
+</html>
