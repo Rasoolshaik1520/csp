@@ -1,7 +1,5 @@
-<script>
 document.getElementById("surveyForm").addEventListener("submit",function(e){
 e.preventDefault();
-alert("Thank you for participating in the survey!");
+alert("Thank you for participating!");
 this.reset();
 });
-</script>
