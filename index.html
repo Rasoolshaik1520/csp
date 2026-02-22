@@ -3,28 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Digital Awareness in Rural Areas</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="script.js">
+<title>Digital Payment Guide & Awareness</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="script.js">
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
 <nav>
 <div class="container nav-container">
 <div class="logo">Digital Payment Awareness</div>
 <div class="nav-links">
 <a href="#home">Home</a>
 <a href="#methods">Payments</a>
+<a href="#process">How To Pay</a>
 <a href="#survey">Survey</a>
 <a href="#awareness">Safety</a>
 <a href="#contact">Contact</a>
@@ -32,71 +28,81 @@
 </div>
 </nav>
 
-<!-- HERO -->
 <header id="home" class="hero">
-<h1>Empowering Rural India Through Digital Awareness</h1>
-<p>Our mission is to educate rural communities about digital payments, secure transactions, and financial inclusion for a safer future.</p>
-<a href="#methods" class="btn">Learn About Digital Payments</a>
+<h1>Digital Payment Guide & Awareness</h1>
+<p>Learn how to use digital payments safely and confidently.</p><br>
+<a href="#process" class="btn">See How Payments Work</a>
 </header>
 
-<!-- PAYMENT METHODS -->
 <section id="methods">
 <div class="container">
 <h2 style="text-align:center;margin-bottom:40px;">Digital Payment Methods</h2>
-
 <div class="methods-grid">
 
-<div class="method-card">
+<div class="card">
 <i class="fas fa-mobile-alt"></i>
 <h3>UPI</h3>
-<p>Instant money transfer using apps like Google Pay, PhonePe and Paytm.</p>
-<div class="tips">Safety: Never share your UPI PIN.</div>
+<p>Transfer money instantly using mobile apps.</p>
+<div class="tips">Never share your UPI PIN.</div>
 </div>
 
-<div class="method-card">
+<div class="card">
 <i class="fas fa-credit-card"></i>
-<h3>Debit/Credit Cards</h3>
-<p>Used for ATM withdrawals, shopping and online transactions.</p>
-<div class="tips">Safety: Do not share card details or CVV.</div>
+<h3>Debit/Credit Card</h3>
+<p>Use at shops and online websites.</p>
+<div class="tips">Keep your CVV confidential.</div>
 </div>
 
-<div class="method-card">
-<i class="fas fa-laptop"></i>
+<div class="card">
+<i class="fas fa-university"></i>
 <h3>Net Banking</h3>
-<p>Online banking via official bank websites.</p>
-<div class="tips">Safety: Always check for HTTPS.</div>
-</div>
-
-<div class="method-card">
-<i class="fas fa-wallet"></i>
-<h3>Mobile Wallets</h3>
-<p>Prepaid digital wallets for quick transactions.</p>
-<div class="tips">Safety: Enable app lock.</div>
-</div>
-
-<div class="method-card">
-<i class="fas fa-fingerprint"></i>
-<h3>AEPS</h3>
-<p>Aadhaar based payment system using fingerprint authentication.</p>
-<div class="tips">Safety: Do not share Aadhaar OTP.</div>
+<p>Online transfer via official bank website.</p>
+<div class="tips">Check website security.</div>
 </div>
 
 </div>
 </div>
 </section>
 
-<!-- SURVEY -->
+<section id="process">
+<div class="container">
+<h2 style="text-align:center;margin-bottom:40px;">How To Make a UPI Payment</h2>
+<div class="process-grid">
+
+<div class="card">
+<h3>Step 1</h3>
+<p>Open your UPI app (Google Pay / PhonePe).</p>
+</div>
+
+<div class="card">
+<h3>Step 2</h3>
+<p>Select "Send Money" and enter mobile number or scan QR code.</p>
+</div>
+
+<div class="card">
+<h3>Step 3</h3>
+<p>Enter amount and verify receiver name carefully.</p>
+</div>
+
+<div class="card">
+<h3>Step 4</h3>
+<p>Enter your UPI PIN and confirm payment.</p>
+</div>
+
+<div class="card">
+<h3>Step 5</h3>
+<p>Check confirmation message after successful transaction.</p>
+</div>
+
+</div>
+</div>
+</section>
+
 <section id="survey">
 <div class="container">
 <h2 style="text-align:center;margin-bottom:40px;">Community Survey</h2>
-
 <div class="survey-box">
 <form id="surveyForm">
-
-<div class="form-group">
-<label>Name (Optional)</label>
-<input type="text">
-</div>
 
 <div class="form-group">
 <label>Age Group</label>
@@ -111,83 +117,63 @@
 </div>
 
 <div class="form-group">
-<label>Are you using digital payments?</label>
+<label>Using Digital Payments?</label>
 <div class="radio-group">
-<label><input type="radio" name="usage" required> Yes</label>
-<label><input type="radio" name="usage"> No</label>
+<label><input type="radio" name="use" required> Yes</label>
+<label><input type="radio" name="use"> No</label>
 </div>
 </div>
 
-<div class="form-group">
-<label>Main Payment Method</label>
-<select required>
-<option value="">Select Method</option>
-<option>UPI</option>
-<option>Card</option>
-<option>Net Banking</option>
-<option>Wallet</option>
-<option>AEPS</option>
-<option>None</option>
-</select>
-</div>
-
-<div class="form-group">
-<label>Suggestions</label>
-<textarea rows="3"></textarea>
-</div>
-
-<button class="btn" type="submit">Submit Survey</button>
+<button class="btn" type="submit">Submit</button>
 
 </form>
 </div>
 </div>
 </section>
 
-<!-- AWARENESS -->
 <section id="awareness">
 <div class="container">
-<h2 style="text-align:center;margin-bottom:40px;">Digital Safety Awareness</h2>
-
+<h2 style="text-align:center;margin-bottom:40px;">Safety Awareness</h2>
 <div class="awareness-grid">
 
-<div class="awareness-box">
-<h3>Never Share OTP or PIN</h3>
+<div class="card">
+<h3>Never Share OTP</h3>
 <p>No bank official will ask for OTP or PIN.</p>
 </div>
 
-<div class="awareness-box">
+<div class="card">
 <h3>Beware of Fake Calls</h3>
-<p>Do not trust unknown callers asking for account details.</p>
+<p>Do not share details with unknown callers.</p>
 </div>
 
-<div class="awareness-box">
-<h3>Avoid Suspicious Links</h3>
-<p>Do not click unknown SMS or WhatsApp links.</p>
-</div>
-
-<div class="awareness-box">
-<h3>Report Fraud Immediately</h3>
-<p>Call 1930 Cyber Crime Helpline if fraud occurs.</p>
+<div class="card">
+<h3>Report Fraud</h3>
+<p>Call 1930 immediately if fraud happens.</p>
 </div>
 
 </div>
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
 <div class="container">
-<h2>Contact Our Team</h2>
+<h2>Contact Us</h2>
 <p>B.Tech Community Service Project 2026</p>
 <p>Helpline: +91 98765 43210</p>
-<p>Email: digitalsaksharta2026@gmail.com</p>
 </div>
 </section>
 
 <footer>
-© 2026 Community Service Initiative | Digital Awareness in Rural Areas
+© 2026 Digital Payment Awareness Initiative
 </footer>
 
+<script>
+document.getElementById("surveyForm").addEventListener("submit",function(e){
+e.preventDefault();
+alert("Thank you for participating!");
+this.reset();
+});
+</script>
 
 </body>
 </html>
